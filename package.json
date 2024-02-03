@@ -1,0 +1,23 @@
+{
+  "name": "whatsapp-bot",
+  "version": "1.0.0",
+  "description": "WhatsApp Bot Replyer, Powered by Node.js+whatsapp-web.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gensart-ai/whatsapp-bot"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "whatsapp-bot",
+    "nodejs",
+    "whatsapp-web",
+    "web"
+  ],
+  "author": "gensart",
+  "license": "MIT"
+}
