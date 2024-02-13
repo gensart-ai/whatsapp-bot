@@ -3,6 +3,9 @@ import { commands } from "command-hive";
 
 const routeCommand = async (client: Client, message: Message) => {
 
+    // Read the message first
+    await client.sendSeen(message.from);
+
     const type: string = message.type;
     const command: string = message.body;
 

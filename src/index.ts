@@ -21,11 +21,18 @@ client.on('qr', qr => {
 
 client.on('message', message => routeCommand(client, message))
 
+client.on('loading_screen', async (percent, message) => {
+    console.log(`State:  ${message}`);
+})
+
 client.on('ready', () => {
-    console.log('System is online!')
+    console.log('System is online!');
 })
 client.on('disconnected', (message: string) => {
     console.log('Client is closed due to disconnecting', message);
 })
 
+console.log('==== WhatsApp Bot ====')
+console.log('Initializing Bot Engine...')
+console.log('Bot name : Sora Erlyana')
 client.initialize();
