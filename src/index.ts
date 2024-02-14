@@ -1,6 +1,6 @@
 import { Client, LocalAuth } from 'whatsapp-web.js';
 import QR from 'qrcode-terminal';
-import routeCommand from 'command-router';
+import routeCommand from '@/command-router';
 
 let qrAttempts: number = 0;
 const client: Client = new Client({

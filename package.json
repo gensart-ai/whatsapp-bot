@@ -2,11 +2,13 @@
   "name": "whatsapp-bot",
   "version": "1.0.0",
   "description": "WhatsApp Bot Replyer, Powered by Node.js+whatsapp-web.js",
-  "main": "dist/src/index.js",
+  "main": "dist/index.js",
   "type": "commonjs",
   "scripts": {
     "test": "echo \"No test specified\" && exit 1",
-    "start": "nodemon --ext \"ts,json\" --exec \"tsx ./src/index.ts\""
+    "build": "tsc && npx tsc-alias",
+    "start": "nodemon --ext \"ts,json\" --exec \"tsx ./src/index.ts\"",
+    "serve": "nodemon ./dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,7 @@
     "@types/qrcode-terminal": "^0.12.2",
     "@types/tough-cookie": "^4.0.5",
     "nodemon": "^3.0.3",
+    "tsc-alias": "^1.8.8",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3"
   },

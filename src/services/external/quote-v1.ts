@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Executor } from 'command-hive';
+import { Executor } from '@/command-hive';
 
 const RESPONSE_SUCCESS: number = 200;
 

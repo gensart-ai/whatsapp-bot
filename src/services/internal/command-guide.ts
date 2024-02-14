@@ -1,4 +1,4 @@
-import { Executor } from "command-hive";
+import { Executor } from "@/command-hive";
 
 const commandGuide: Executor = async (client, message) => {
 

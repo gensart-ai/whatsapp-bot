@@ -1,5 +1,5 @@
 import { Client, Message } from "whatsapp-web.js"
-import { commands } from "command-hive";
+import { commands } from "@/command-hive";
 
 const routeCommand = async (client: Client, message: Message) => {
 

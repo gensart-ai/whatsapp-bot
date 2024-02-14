@@ -1,4 +1,4 @@
-import { Executor } from "command-hive";
+import { Executor } from "@/command-hive";
 import { mediaStickerMetadata } from "utils/wweb-utils";
 import { MessageMedia } from "whatsapp-web.js";
 

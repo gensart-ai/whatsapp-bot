@@ -3,7 +3,7 @@ import axiosInstance from 'utils/axios-instance';
 import { warningNoTextMessage, createTextProImage, TextProImageObject } from 'utils/textpro-utils';
 import { mediaStickerMetadata } from 'utils/wweb-utils';
 
-import { Executor } from 'command-hive';
+import { Executor } from '@/command-hive';
 import { Client, Contact, Message, MessageMedia } from 'whatsapp-web.js';
 
 /**
