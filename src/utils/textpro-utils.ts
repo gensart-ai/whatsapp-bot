@@ -67,6 +67,13 @@ const getImageFromTextPro = async (imageUrl: string, axiosInstance: AxiosInstanc
     };
 }
 
+/**
+ * Retrieves the image URL from the provided metadata using the given axios instance.
+ *
+ * @param {object} metadata - The metadata object for image retrieval
+ * @param {AxiosInstance} axiosInstance - The Axios instance for making the HTTP request
+ * @return {Promise<TextProImageUrl>} The URL of the retrieved image
+ */
 const getImageUrlFromTextPro = async (metadata: object, axiosInstance: AxiosInstance): Promise<TextProImageUrl> => {
     const textProImageHiveUrl = 'https://textpro.me/effect/create-image';
 
@@ -83,6 +90,12 @@ const getImageUrlFromTextPro = async (metadata: object, axiosInstance: AxiosInst
     }
 }
 
+/**
+ * Retrieves image metadata from TextPro using the provided TextProMetadata.
+ *
+ * @param {TextProMetadata} metadata - the metadata object containing text, token, and axios instance
+ * @return {Promise<JSON>} a promise that resolves to the image metadata in JSON format
+ */
 const getImageMetadataFromTextPro = async (metadata: TextProMetadata): Promise<JSON> => {
 
     const response = await metadata.axiosInstance.post(metadata.textProUrl, {
@@ -103,6 +116,13 @@ const getImageMetadataFromTextPro = async (metadata: TextProMetadata): Promise<J
     return JSON.parse(imageMetadata);
 }
 
+/**
+ * Retrieves a token from the specified TextPro URL using the provided Axios instance.
+ *
+ * @param {string} textProUrl - the URL of the TextPro page
+ * @param {AxiosInstance} axiosInstance - the Axios instance for making the HTTP request
+ * @return {Promise<TextProToken>} the token retrieved from the TextPro page
+ */
 const getTokenFromTextProPage = async (textProUrl: string, axiosInstance: AxiosInstance): Promise<TextProToken> => {
     const response = await axiosInstance.get(textProUrl);
 
@@ -117,6 +137,14 @@ const getTokenFromTextProPage = async (textProUrl: string, axiosInstance: AxiosI
     }
 }
 
+/**
+ * Creates a text-pro image using the provided text, textProUrl, and axiosInstance. 
+ *
+ * @param {string} text - the text to be used in the image
+ * @param {string} textProUrl - the URL for the text-pro service
+ * @param {AxiosInstance} axiosInstance - the Axios instance for making HTTP requests
+ * @return {Promise<TextProImageObject>} the text-pro image object
+ */
 const createTextProImage = async (text: string, textProUrl: string, axiosInstance: AxiosInstance) => {
     const token: TextProToken = await getTokenFromTextProPage(textProUrl, axiosInstance);
     const metadata: JSON = await getImageMetadataFromTextPro({
