@@ -3,10 +3,12 @@ import { Executor } from "@/command-hive";
 const commandGuide: Executor = async (client, message) => {
 
     const commandListMessage: Array<string> = [
-        'Hai, aku Sora Erlyana, bot WhatsApp untuk membantu kamu dalam menyelesaikan pekerjaanmu, atau meme mu, wkwk.',
+        'Hai, aku Sora Erlyana, siap membantu kamu untuk kegiatan harianmu',
         'Btw, dibawah ini list command yang tersedia: (Bisa ketik perintahnya aja untuk informasi setiap perintahnya ya)\n',
         '===== Quotes =====',
         '.quote\n',
+        '===== Gambar jadi Stiker =====',
+        '.s (kirim bersama dengan gambarnya)\n',
         '===== TextPro (Buat teks jadi gambar, dengan gaya) =====',
         '.neon',
         '.lunar',

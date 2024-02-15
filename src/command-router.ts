@@ -14,7 +14,7 @@ const routeCommand = async (client: Client, message: Message) => {
     if(extractedCommand in commands) {
         await commands[extractedCommand](client, message);
     } else {
-        client.sendMessage(message.from, 'Saya tidak mengerti apa yang anda sampaikan :(');
+        client.sendMessage(message.from, 'Sora tidak mengerti apa yang anda sampaikan :(. Harap ketik `.help` untuk mengetahui yang Sora pahami :)');
     }
 }
 
