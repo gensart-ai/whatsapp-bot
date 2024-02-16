@@ -1,6 +1,7 @@
-import { Client, LocalAuth } from 'whatsapp-web.js';
-import QR from 'qrcode-terminal';
-import routeCommand from '@/command-router';
+import { Client, LocalAuth } from 'whatsapp-web.js'
+import QR from 'qrcode-terminal'
+import routeCommand from '@/command-router'
+import config from '@/env'
 
 let qrAttempts: number = 0;
 const client: Client = new Client({
@@ -34,5 +35,5 @@ client.on('disconnected', (message: string) => {
 
 console.log('==== WhatsApp Bot ====')
 console.log('Initializing Bot Engine...')
-console.log('Bot name : Sora Erlyana')
+console.log(`Bot name : ${config.botName}`)
 client.initialize();

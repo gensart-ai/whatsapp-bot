@@ -1,7 +1,7 @@
 import { AxiosError } from 'axios';
 import axiosInstance from 'utils/axios-instance';
-import { warningNoTextMessage, createTextProImage, TextProImageObject } from 'utils/textpro-utils';
-import { mediaStickerMetadata } from 'utils/wweb-utils';
+import { warningNoTextMessage, createTextProImage, TextProImageObject } from '@utils/textpro';
+import * as wweb from '@utils/wweb';
 
 import { Executor } from '@/command-hive';
 import { Client, Contact, Message, MessageMedia } from 'whatsapp-web.js';
@@ -70,14 +70,6 @@ const textProSingleTextRouter: Executor = async (client: Client, message: Messag
     textpro(client, message, url);
 }
 
-/**
- * Asynchronous function to process text and create image or sticker based on user's input command.
- *
- * @param {Client} client - the client object
- * @param {Message} message - the message object
- * @param {string} url - the URL for image processing
- * @return {number} status code indicating the success or failure of the operation
- */
 const textpro = async (client: Client, message: Message, url: string) => {
     try {
         const sender: Contact = await message.getContact();
@@ -92,7 +84,7 @@ const textpro = async (client: Client, message: Message, url: string) => {
 
         // If the user only input just command(s) only.
         if (text.length === 0) {
-            message.reply(warningNoTextMessage(command));
+            wweb.replyMessage(message, warningNoTextMessage(command));
             return 0;
         }
 
@@ -102,17 +94,20 @@ const textpro = async (client: Client, message: Message, url: string) => {
         const image: TextProImageObject = await createTextProImage(text, url, axiosInstance);
 
         if (isSticker) {
-            message.reply(new MessageMedia(image.mimetype, image.image), undefined, mediaStickerMetadata(sender.pushname));
+            wweb.replyMessage(
+                message,
+                new MessageMedia(image.mimetype, image.image),
+                wweb.mediaStickerMetadata(sender.pushname)
+            )
         } else {
-            message.reply(new MessageMedia(image.mimetype, image.image));
+            wweb.replyMessage(message, new MessageMedia(image.mimetype, image.image));
         }
 
     } catch (e) {
-        const error = e as AxiosError | Error;
-
-        console.log(error.name + ': ' + error.message);
-        message.reply('Sorry, error is happening\n\n' + error.message);
+        wweb.replyMessage(message, 'Gagal memproses gambar, silahkan coba lagi');
     }
 }
 
-export default textProSingleTextRouter
+export {
+    textProSingleTextRouter
+}

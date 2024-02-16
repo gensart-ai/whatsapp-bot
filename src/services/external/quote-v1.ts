@@ -1,20 +1,41 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { Executor } from '@/command-hive';
+import * as wweb from '@utils/wweb';
+import * as translate from '@utils/translation'
 
-const RESPONSE_SUCCESS: number = 200;
+type Quote = {
+    quote: string,
+    author: string
+}
 
-export const getQuote: Executor = async (client, message) => {
+const getForismaticQuotes: Executor = async (client, message) => {
     try {
-        const response = await axios.get('https://rest-api.akuari.my.id/randomtext/katabijak');
-        
-        if (response.status == RESPONSE_SUCCESS) {
-            const data = response.data.hasil;
-            const quoteMessage = await message.reply(data.quotes ?? '-');
-            quoteMessage.reply(`by ${data.author ?? '-'}`);
-        } else {
-            message.reply('Gagal mengambil quotes, maaf :(');
+        // Quote retrieval
+        const forismaticApiUrl: string = 'http://api.forismatic.com/api/1.0/json?method=getQuote&format=json&lang=en';
+        const quoteResponse = await axios.post(forismaticApiUrl);
+        const quote: Quote = {
+            quote: quoteResponse.data.quoteText,
+            author: quoteResponse.data.quoteAuthor
+        };
+
+        if (quote.author == '') {
+            quote.author = '(tanpa nama)';
         }
+        const translation = await translate.microsoft(quote.quote, 'en', 'id');
+
+        if (translation.success) {
+            wweb.sendMessage(client, message.from, translation.text);
+            wweb.sendMessage(client, message.from, 'By ' + quote.author);
+        } else {
+            wweb.replyMessage(message, translation.error ?? 'Gagal memuat quotes, silahkan coba lagi.');
+        }
+
     } catch (e) {
-        message.reply('Maaf, Sora mengalami masalah saat mengambil quotesnya :(');
+        const error = e as AxiosError | Error;
+        wweb.replyMessage(message, 'Gagal memuat quotes, silahkan coba lagi.')
     }
+}
+
+export {
+    getForismaticQuotes
 }

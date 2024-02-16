@@ -1,15 +1,20 @@
-import { Executor } from "@/command-hive";
+import { Executor } from '@/command-hive'
+import * as wweb from '@utils/wweb'
+import config from '@/env'
 
 const commandGuide: Executor = async (client, message) => {
 
     const commandListMessage: Array<string> = [
-        'Hai, aku Sora Erlyana, siap membantu kamu untuk kegiatan harianmu',
+        `Hai, aku ${config.botName}, siap membantu kamu untuk kegiatan harianmu`,
         'Btw, dibawah ini list command yang tersedia: (Bisa ketik perintahnya aja untuk informasi setiap perintahnya ya)\n',
-        '===== Quotes =====',
-        '.quote\n',
-        '===== Gambar jadi Stiker =====',
+        '*== Quotes ==*',
+        '.quotes\n',
+        '*== Translate ==*',
+        '.indotoeng [text indo] - Translate Indonesia ke Inggris',
+        '.engtoindo [text inggris] - Translate Inggris ke Indonesia\n',
+        '*== Gambar jadi Stiker ==*',
         '.s (kirim bersama dengan gambarnya)\n',
-        '===== TextPro (Buat teks jadi gambar, dengan gaya) =====',
+        '*== TextPro (Buat teks jadi gambar, dengan gaya) ==*',
         '.neon',
         '.lunar',
         '.thunder',
@@ -25,10 +30,15 @@ const commandGuide: Executor = async (client, message) => {
         '.neon-valentine',
         '.neon-cube',
         '.blackpink-logo\n',
-        'Aku masih tahap pengembangan, banyak perintah juga nantinya aku bisa lakuin loh >_<, stay tuned yaa. Oh iya, kamu juga bisa request ke creatorku. Bye bye~'
+        `${config.botShortName} masih tahap pengembangan, banyak perintah juga nantinya ${config.botShortName} bisa lakuin loh >_<, stay tuned yaa. Oh iya, kamu juga bisa request ke creator ${config.botName}. Bye bye~\n\n`,
+        `Detail of ${config.botShortName} : https://gensart.notion.site/SoraErlyana-WhatsApp-Bot-7248504bbe18476e912912a9426b9bad`
     ];
 
-    client.sendMessage(message.from, commandListMessage.join('\n'))
+    // Merge the array of strings to be as a message
+    const commandMessage = commandListMessage.join('\n');
+
+    // Send the message
+    wweb.sendMessage(client, message.from, commandMessage);
 }
 
 export default commandGuide;

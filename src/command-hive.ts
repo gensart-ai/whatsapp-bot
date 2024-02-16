@@ -1,20 +1,25 @@
 import { Client, Message } from 'whatsapp-web.js'
-import { getQuote } from 'services/external/quote-v1'
-import textProSingleTextRouter from 'services/external/textpro'
+import { getForismaticQuotes } from 'services/external/quote-v1'
+import { textProSingleTextRouter } from 'services/external/textpro'
 import commandGuide from 'services/internal/command-guide'
 import imageToSticker from 'services/internal/image-to-sticker'
+import { translateEnglishToIndo, translateIndoToEnglish } from './services/external/translate'
 
 type Commands = {
     [key: string] : (client: Client, message: Message) => any
 }
-type Executor = (client: Client, message: Message) => any
+type Executor = (client: Client, message: Message) => void
 
 const commands: Commands = {
     // * Help
     '.help': commandGuide,
 
     // * Quotes
-    '.quote': getQuote,
+    '.quotes': getForismaticQuotes,
+
+    // * Translation
+    '.engtoindo': translateEnglishToIndo,
+    '.indotoeng': translateIndoToEnglish,
 
     // * Image to sticker
     '.s': imageToSticker,
