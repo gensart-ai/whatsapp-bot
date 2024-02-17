@@ -5,7 +5,7 @@ interface EnvironmentConfiguration {
     botShortName: string,
     botCodeName: string,
 
-    imgBBKey: string,
+    imgBBKey: string, // ImgBB API Key
 }
 
 const environmentConfiguration: EnvironmentConfiguration = {
