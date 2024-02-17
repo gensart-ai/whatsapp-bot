@@ -28,3 +28,5 @@ jobs:
           script: |
             cd ~/production_space/whatsapp-bot
             git pull origin main
+            npm run build
+            systemctl --user restart whatsapp-bot
