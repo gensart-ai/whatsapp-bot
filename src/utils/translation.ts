@@ -88,6 +88,11 @@ const bing = async (text: string, isoFrom: string | null, isoTo: string): Promis
     return result;
 }
 
+/**
+ * Check whether the text is more than 1000 characters or not, returning boolean
+ * @param {string} text The text to be checked
+ * @return {boolean} Whether the text is more than 1000 characters or not
+ */
 const isTextMoreThanLimit = (text: string): boolean => {
     return text.length > 1000;
 }
