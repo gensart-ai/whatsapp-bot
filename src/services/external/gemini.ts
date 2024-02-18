@@ -85,6 +85,12 @@ const geminiText = async (text: string): Promise<GeminiResponse> => {
 
 const geminiTextOnly: Executor = async (client, message) => {
     try {
+
+        // ! Gemini is still not supported on my current VPS
+        // Temporary warn message
+        wweb.replyMessage(message, `${config.botShortName} tidak dapat memproses perintah ini, fitur sedang dalam tahap pengembangan. Silahkan coba kembali nanti ya`);
+        return 0;
+
         // Delete command from text
         let text: string = message.body;
         text = text.split(' ').slice(1).join(' ');

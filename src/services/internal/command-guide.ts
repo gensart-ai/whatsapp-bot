@@ -10,7 +10,7 @@ const commandGuide: Executor = async (client, message) => {
         '*== Quotes ==*',
         '.quotes\n',
         '*== Fitur AI ==*',
-        '.gemini [pertanyaan/perintah]\n',
+        '.gemini - *DIHENTIKAN SEMENTARA* - \n',
         '*== Translate ==*',
         '.indotoeng [text indo] - Translate Indonesia ke Inggris',
         '.engtoindo [text inggris] - Translate Inggris ke Indonesia\n',
