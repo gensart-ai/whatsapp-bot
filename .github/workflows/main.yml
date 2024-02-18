@@ -7,6 +7,12 @@ name: Deploy Node to Production Server
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - 'README.md'
+      - 'CODE_OF_CONDUCT.md'
+      - 'LICENSE'
+      - 'SECURITY.md'
+      - 'SUPPORT.md'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -27,6 +33,8 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd ~/production_space/whatsapp-bot
+            git reset --hard
+            git clean -df
             git pull origin main
             npm i
             npm run build
