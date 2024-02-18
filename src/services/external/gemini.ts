@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 import * as wweb from '@utils/wweb'
 import { Executor } from '@/command-hive'
 import config from '@/env'
@@ -113,7 +113,7 @@ const geminiTextOnly: Executor = async (client, message) => {
         }
     } catch (error) {
         // wweb.replyMessage(message, 'Maaf, terjadi kesalahan saat menjawab pertanyaan anda. Silahkan coba lagi');
-        wweb.replyMessage(message, (error as Error).message + ' at ' + (error as Error).name);
+        wweb.replyMessage(message, (error as Error).message + ' at ' + (error as AxiosError).stack);
     }
 }
 
