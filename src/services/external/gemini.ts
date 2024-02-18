@@ -1,4 +1,4 @@
-import axios, { AxiosError } from 'axios'
+import axios from 'axios'
 import * as wweb from '@utils/wweb'
 import { Executor } from '@/command-hive'
 import config from '@/env'
