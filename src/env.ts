@@ -6,6 +6,7 @@ interface EnvironmentConfiguration {
     botCodeName: string,
 
     imgBBKey: string, // ImgBB API Key
+    googleAiStudioKey: string,
 }
 
 const environmentConfiguration: EnvironmentConfiguration = {
@@ -15,7 +16,8 @@ const environmentConfiguration: EnvironmentConfiguration = {
     botShortName: 'Sora',
     botCodeName: 'SoraErlyana',
 
-    imgBBKey: '8ceb73c518129ab2ca63c8cf9f7ea8a6'
+    imgBBKey: '8ceb73c518129ab2ca63c8cf9f7ea8a6',
+    googleAiStudioKey: 'AIzaSyBIMSDB4T7Gn7pfnTMLJHMp4qenjG0gN0Q'
 }
 
 export default environmentConfiguration

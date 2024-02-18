@@ -9,6 +9,8 @@ const commandGuide: Executor = async (client, message) => {
         'Btw, dibawah ini list command yang tersedia: (Bisa ketik perintahnya aja untuk informasi setiap perintahnya ya)\n',
         '*== Quotes ==*',
         '.quotes\n',
+        '*== Fitur AI ==*',
+        '.gemini [pertanyaan/perintah]\n',
         '*== Translate ==*',
         '.indotoeng [text indo] - Translate Indonesia ke Inggris',
         '.engtoindo [text inggris] - Translate Inggris ke Indonesia\n',

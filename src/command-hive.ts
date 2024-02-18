@@ -5,6 +5,7 @@ import commandGuide from 'services/internal/command-guide'
 import imageToSticker from 'services/internal/image-to-sticker'
 import { translateEnglishToIndo, translateIndoToEnglish } from './services/external/translate'
 import { imageToStickerText } from './services/external/image-to-sticker-meme'
+import { geminiTextOnly } from './services/external/gemini'
 
 type Commands = {
     [key: string] : (client: Client, message: Message) => any
@@ -17,6 +18,9 @@ const commands: Commands = {
 
     // * Quotes
     '.quotes': getForismaticQuotes,
+
+    // * AI-generated
+    '.gemini': geminiTextOnly,
 
     // * Translation
     '.engtoindo': translateEnglishToIndo,
