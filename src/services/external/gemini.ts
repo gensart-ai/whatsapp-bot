@@ -112,8 +112,7 @@ const geminiTextOnly: Executor = async (client, message) => {
             wweb.replyMessage(message, 'Maaf, tidak ada jawaban yang tersedia. Silahkan coba lagi');
         }
     } catch (error) {
-        // wweb.replyMessage(message, 'Maaf, terjadi kesalahan saat menjawab pertanyaan anda. Silahkan coba lagi');
-        wweb.replyMessage(message, (error as Error).message + ' at ' + (error as AxiosError).response?.data as string);
+        wweb.replyMessage(message, 'Maaf, terjadi kesalahan saat menjawab pertanyaan anda. Silahkan coba lagi');
     }
 }
 
