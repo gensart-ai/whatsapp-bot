@@ -1,2 +1,6 @@
 - [Welcome](../README.md)
-- Other
+- [Requirements](./REQUIREMENTS.md)
+- [Installation](./INSTALLATION.md)
+- [Pre Configurations](./CONFIGURATIONS.md)
+- [Quickstart](./QUICKSTART.md)
+- [Usage](./USAGE.md)
