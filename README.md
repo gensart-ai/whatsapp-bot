@@ -1,7 +1,12 @@
 
+<p align="center">
+  <img width="400" height="400" src="https://i.ibb.co/7y1v1q4/hour.png">
+</p>
 
 # WhatsApp Bot by Node.js + whatsapp-web.js
-> Since this project still on development 🚧, I do not have any briliant names for it. Maybe soon, stay tuned !
+> Since this project still on development 🚧, I do not have any briliant names for it. Maybe soon, stay tuned !  
+
+Documentation Page : [Click Here ▶](https://gensart-ai.github.io/whatsapp-bot)
 #### Just an automated WhatsApp reply system based on text sent that built under Node.js, with help of a library called [whatsapp-web.js](https://wwebjs.dev/).
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.png)](https://nodejs.org)
