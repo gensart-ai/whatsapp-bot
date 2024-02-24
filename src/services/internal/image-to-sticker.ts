@@ -5,20 +5,22 @@ import config from '@/env'
 
 const imageToSticker: Executor = async (client, message) => {
     const contact = await message.getContact();
+    let media: MessageMedia | undefined;
 
-    if (message.hasMedia == false) {
-        wweb.replyMessage(
-            message,
-            `${config.botShortName} perlu gambar untuk dijadikan stikernya, ${contact.pushname ?? ''}`
-        );
-        return 0;
+    // If the message contains quoted message
+    // Retrieve the media from quoted message instead of primary message
+    if (message.hasQuotedMsg) {
+        const quotedMessage = await message.getQuotedMessage();
+        media = quotedMessage.hasMedia ? await quotedMessage.downloadMedia() : undefined;
+    } else {
+        media = message.hasMedia ? await message.downloadMedia() : undefined;
     }
 
-    const media: MessageMedia | undefined = await message.downloadMedia();
+    // If the message does not contain any media, inform the user, and cancel it.
     if (media == undefined) {
         wweb.replyMessage(
             message,
-            `${config.botShortName} gagal memproses gambar yang anda tujukan, mohon coba lagi dengan mengirim gambar baru.`
+            `${config.botShortName} perlu gambar untuk dijadikan stikernya, ${contact.pushname ?? ''}`
         );
         return 0;
     }

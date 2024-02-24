@@ -99,9 +99,25 @@ const addTextToImage = async (urlImage: string, bottomText: string, topText: str
 
 const imageToStickerText: Executor = async (client, message) => {
     try {
-
         const contact: Contact = await message.getContact();
+        let media: MessageMedia | undefined;
 
+        // Check if the user is referring a quoted message to be executed
+        // If so, retrieve the media if possible, otherwise retrieve from the primary message
+        if (message.hasQuotedMsg) {
+            const quotedMessage = await message.getQuotedMessage();
+            media = quotedMessage.hasMedia ? await quotedMessage.downloadMedia() : undefined;
+        } else {
+            media = message.hasMedia ? await message.downloadMedia() : undefined;
+        }
+
+        // If this execution does not have any media, inform the user, and cancel it.
+        if (media == undefined) {
+            wweb.replyMessage(message, `${config.botShortName} perlu gambar untuk dijadikan stikernya, ${contact.pushname ?? ''}`)
+            return 0;
+        }
+
+        // Extract and separate the texts
         const messageText: string = message.body;
         let text: string | string[] = messageText.split(' ').slice(1);
         let topText: string | null, bottomText: string;
@@ -109,8 +125,8 @@ const imageToStickerText: Executor = async (client, message) => {
         if (text.length === 0) {
             const warningMessage = [
                 'Teks perlu diisi dengan format :',
-                'Format: `.st [teks bawah]|[teks atas]`',
-                'Contoh: `.st makan sate|aku suka`',
+                'Format: `.st [teks atas]|[teks bawah]`',
+                'Contoh: `.st aku suka|makan sate`',
                 'Contoh hanya teks bawah saja : `.st saya makan sate`\n',
                 'Hanya mau gambar jadi stiker saja ? pakai `.s` aja bisa kok.'
             ];
@@ -118,6 +134,7 @@ const imageToStickerText: Executor = async (client, message) => {
             return 0;
         }
 
+        // Separate top and bottom texts
         text = text.join(' ')
         if (text.includes('|')) {
             text = text.split('|');
@@ -128,9 +145,7 @@ const imageToStickerText: Executor = async (client, message) => {
             bottomText = text;
         }
 
-        if (message.hasMedia) {
-            const media = await message.downloadMedia();
-
+        if (media != undefined) {
             const imageUrl: string = await uploadImageToUrl(media.data)
             const meme: Meme = await addTextToImage(imageUrl, bottomText, topText)
 
