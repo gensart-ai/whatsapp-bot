@@ -1,10 +1,11 @@
-import { AxiosError } from 'axios';
-import axiosInstance from 'utils/axios-instance';
-import { warningNoTextMessage, createTextProImage, TextProImageObject } from '@utils/textpro';
-import * as wweb from '@utils/wweb';
+import { Client, Contact, Message, MessageMedia } from 'whatsapp-web.js'
+import { AxiosError } from 'axios'
+import axiosInstance from '@utils/axios-instance'
+import { warningNoTextMessage, createTextProImage, TextProImageObject } from '@utils/textpro'
+import { Executor } from '@/command-hive'
+import * as wweb from '@utils/wweb'
+import * as logger from '@utils/logger'
 
-import { Executor } from '@/command-hive';
-import { Client, Contact, Message, MessageMedia } from 'whatsapp-web.js';
 
 /**
  * Routes textpro style based on the command.
@@ -103,7 +104,11 @@ const textpro = async (client: Client, message: Message, url: string) => {
             wweb.replyMessage(message, new MessageMedia(image.mimetype, image.image));
         }
 
-    } catch (e) {
+    } catch (error) {
+        const contact = await message.getContact();
+        const err = error as AxiosError;
+        logger.logError('TextPro - ' + err.message + ' by ' + contact?.pushname ?? 'unknown');
+
         wweb.replyMessage(message, 'Gagal memproses gambar, silahkan coba lagi');
     }
 }

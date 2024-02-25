@@ -11,4 +11,4 @@ After that, go to the repo root directory on your system and do the command belo
 npm i
 ```  
 
-And you're done ! Next is for [configuration](./CONFIGURATIONS.md).
+And you're done ! Next is for [pre-configuration](./CONFIGURATIONS.md).

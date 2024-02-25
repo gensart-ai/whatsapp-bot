@@ -1,7 +1,8 @@
-import axios, { AxiosError } from 'axios';
-import { Executor } from '@/command-hive';
-import * as wweb from '@utils/wweb';
+import axios, { AxiosError } from 'axios'
+import { Executor } from '@/command-hive'
+import * as wweb from '@utils/wweb'
 import * as translate from '@utils/translation'
+import * as logger from '@utils/logger'
 
 type Quote = {
     quote: string,
@@ -31,7 +32,10 @@ const getForismaticQuotes: Executor = async (client, message) => {
         }
 
     } catch (e) {
-        const error = e as AxiosError | Error;
+        const contact = await message.getContact();
+        const err = e as AxiosError | Error;
+        logger.logError('quoteV1Forismatic - ' + err.message + ' by ' + contact?.pushname ?? 'unknown');
+
         wweb.replyMessage(message, 'Gagal memuat quotes, silahkan coba lagi.')
     }
 }

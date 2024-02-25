@@ -1,2 +1,1 @@
-* Ever heard of me ?
-* You must be mistaken :).
+* [SoraErlyana Repo GitHub](https://github.com/gensart-ai/whatsapp-bot)

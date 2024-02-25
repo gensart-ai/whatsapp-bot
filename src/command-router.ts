@@ -21,10 +21,11 @@ const routeCommand = async (client: Client, message: Message) => {
     if (extractedCommand in commands) {
         await commands[extractedCommand](client, message);
     } else {
+        const contact = await message.getContact();
         wweb.sendMessage(
             client,
             message.from,
-            `${config.botShortName} tidak mengerti apa yang anda sampaikan :(. Harap ketik \`.help\` untuk mengetahui yang ${config.botShortName} pahami :)`
+            `${config.botShortName} tidak mengerti. Harap ketik \`.help\` untuk mengetahui yang ${config.botShortName} pahami, ${contact?.pushname ?? ''}!`
         )
     }
 }

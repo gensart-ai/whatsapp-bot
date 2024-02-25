@@ -1,9 +1,10 @@
-import axios from 'axios'
+import { Contact, MessageMedia } from 'whatsapp-web.js'
+import axios, { AxiosError } from 'axios'
 import querystring from 'querystring'
 import config from '@/env'
 import * as wweb from '@utils/wweb'
 import { Executor } from '@/command-hive'
-import { Contact, MessageMedia } from 'whatsapp-web.js'
+import * as logger from '@utils/logger'
 
 type Meme = {
     image: string,
@@ -154,6 +155,10 @@ const imageToStickerText: Executor = async (client, message) => {
             wweb.replyMessage(message, `${config.botShortName} perlu gambar untuk dijadikan stikernya, ${contact.pushname ?? ''}`)
         }
     } catch (error) {
+        const contact = await message.getContact();
+        const err = error as AxiosError;
+        logger.logError('imageToStickerText - ' + err.message + ' by ' + contact?.pushname ?? 'unknown');
+
         wweb.replyMessage(message, `${config.botShortName} gagal memproses gambar yang anda tujukan, mohon coba lagi dengan mengirim gambar baru.`)
     }
 }

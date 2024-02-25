@@ -1,18 +1,23 @@
 import { Client, Message } from 'whatsapp-web.js'
-import { getForismaticQuotes } from 'services/external/quote-v1'
-import { textProSingleTextRouter } from 'services/external/textpro'
-import commandGuide from 'services/internal/command-guide'
-import imageToSticker from 'services/internal/image-to-sticker'
-import { translateEnglishToIndo, translateIndoToEnglish } from './services/external/translate'
-import { imageToStickerText } from './services/external/image-to-sticker-meme'
-import { geminiTextOnly } from './services/external/gemini'
+import { getForismaticQuotes } from '@services/external/quote-v1'
+import { textProSingleTextRouter } from '@services/external/textpro'
+import commandGuide from '@services/internal/command-guide'
+import imageToSticker from '@services/internal/image-to-sticker'
+import { translateEnglishToIndo, translateIndoToEnglish } from '@services/external/translate'
+import { imageToStickerText } from '@services/external/image-to-sticker-meme'
+import { geminiTextOnly } from '@services/external/gemini'
+import { log } from '@services/internal/log'
 
 type Commands = {
-    [key: string] : (client: Client, message: Message) => any
+    [key: string]: (client: Client, message: Message) => any
 }
 type Executor = (client: Client, message: Message) => void
 
 const commands: Commands = {
+
+    // ! Administrative commands
+    '.log': log,
+
     // * Help
     '.help': commandGuide,
 
