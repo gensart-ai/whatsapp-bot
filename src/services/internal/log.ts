@@ -12,16 +12,22 @@ const log: Executor = async (client, message) => {
     switch (logType) {
         case 'error':
             logFile = logger.ERROR_LOG_FILE;
+            break;
         default:
-            logFile = '';
+            wweb.replyMessage(message, 'Gunakan `error` sebagai argumen untuk `.log [argument]`')
+            return 0;
     }
 
-    const logs: string = logger.fetchLog(logFile);
+    try {
+        const logs: string = logger.fetchLog(logFile);
 
-    if (logs != '') {
-        wweb.replyMessage(message, logs)
-    } else {
-        wweb.replyMessage(message, `${config.botShortName} tidak melihat ada log saat ini.`)
+        if (logs != '') {
+            wweb.replyMessage(message, logs)
+        } else {
+            wweb.replyMessage(message, `${config.botShortName} tidak melihat ada log saat ini.`)
+        }
+    } catch (error) {
+        wweb.replyMessage(message, 'Terjadi kesalahan saat memuat log.\n\n' + (error as Error).message)
     }
 }
 
