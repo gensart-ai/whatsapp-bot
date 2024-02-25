@@ -7,6 +7,7 @@ As of current version, I have built several built-in features in it too, some ar
 ```
 *== Quotes ==*
 .quotes
+.indoquotes
 *== AI Feature ==*
 .gemini - *TEMPORARY DISABLED* - 
 *== Translate ==*
