@@ -7,7 +7,8 @@ import { translateEnglishToIndo, translateIndoToEnglish } from '@services/extern
 import { imageToStickerText } from '@services/external/image-to-sticker-meme'
 import { geminiTextOnly } from '@services/external/gemini'
 import { log } from '@services/internal/log'
-import { indoSlangQuote } from './services/internal/quote-indo-slang'
+import { indoSlangQuote } from '@services/internal/quote-indo-slang'
+import { getPpCouple } from '@services/internal/pp-couple'
 
 type Commands = {
     [key: string]: (client: Client, message: Message) => any
@@ -25,6 +26,9 @@ const commands: Commands = {
     // * Quotes
     '.quotes': getForismaticQuotes,
     '.indoquotes': indoSlangQuote,
+
+    // * Random Image
+    '.ppcouple': getPpCouple,
 
     // * AI-generated
     '.gemini': geminiTextOnly,

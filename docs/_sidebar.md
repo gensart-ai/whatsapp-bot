@@ -1,4 +1,4 @@
-- [Welcome](../README.md)
+- [Welcome](./README.md)
 - [Requirements](./REQUIREMENTS.md)
 - [Installation](./INSTALLATION.md)
 - [Pre Configurations](./CONFIGURATIONS.md)
