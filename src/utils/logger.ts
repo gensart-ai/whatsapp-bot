@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import axios, { AxiosResponse } from 'axios'
 
-const LOGS_DIRECTORY: string = 'src/logs';
+const LOGS_DIRECTORY: string = 'logs';
 const ERROR_LOG_FILE: string = 'error-log.txt';
 
 type TimeResponse = {

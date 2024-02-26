@@ -21,7 +21,7 @@ type CouplePhotos = {
     female: string
 }
 
-const PP_COUPLE_DIRECTORY = 'src/assets';
+const PP_COUPLE_DIRECTORY = 'assets';
 const PP_COUPLE_FILE = 'couple-profile.json';
 
 const getCoupleProfilePictures = () => {

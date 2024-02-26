@@ -5,18 +5,25 @@ After the project is installed and configured, you can start the bot by running 
 As of current version, I have built several built-in features in it too, some are these :
 
 ```
-*== Quotes ==*
+🦜 Quotes
 .quotes
 .indoquotes
-*== AI Feature ==*
+
+🎲 Random
+.ppcouple - Giving a couple of profile pictures
+
+🤖 AI Feature
 .gemini - *TEMPORARY DISABLED* - 
-*== Translate ==*
+
+🌐 Translate
 .indotoeng [text indo] - Translate Indonesia to English
 .engtoindo [text English] - Translate English to Indonesia
-*== Media(Image/Short Video) to Sticker ==*
+
+🖼 Media(Image/Short Video) to Sticker
 .s (send with the media with command as the caption)
 .st (send with the media with command as the caption)
-*== TextPro (Create styled-text in an image, add !sticker after the command to create as sticker) ==*
+
+📷 TextPro (Create styled-text in an image, add !sticker after the command to create as sticker)
 .neon
 .lunar
 .thunder
