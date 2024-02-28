@@ -8,6 +8,7 @@ import { imageToStickerText } from '@services/external/image-to-sticker-meme'
 import { log } from '@services/internal/log'
 import { indoSlangQuote } from '@services/internal/quote-indo-slang'
 import { getPpCouple } from '@services/internal/pp-couple'
+import { ghola } from '@services/external/ghola'
 
 type Commands = {
     [key: string]: (client: Client, message: Message) => any
@@ -30,7 +31,7 @@ const commands: Commands = {
     '.ppcouple': getPpCouple,
 
     // * AI-generated
-
+    '.tanya': ghola,
 
     // * Translation
     '.engtoindo': translateEnglishToIndo,
