@@ -16,6 +16,7 @@ client.on('qr', qr => {
     qrAttempts++;
 
     if (qrAttempts > 3) {
+        console.log('Failed to generate QR Code. Exiting...');
         client.destroy()
     }
 })

@@ -1,12 +1,23 @@
 interface EnvironmentConfiguration {
+    /**
+     * Is sending any WhatsApp message allowed ?
+     */
     isSendingMessageEnabled: boolean,
 
+    /**
+     * Bot full name
+     */
     botName: string,
-    botShortName: string,
-    botCodeName: string,
 
-    imgBBKey: string, // ImgBB API Key
-    googleAiStudioKey: string,
+    /**
+     * Bot short name
+     */
+    botShortName: string,
+
+    /**
+     * Bot codename
+     */
+    botCodeName: string,
 }
 
 const environmentConfiguration: EnvironmentConfiguration = {
@@ -14,10 +25,7 @@ const environmentConfiguration: EnvironmentConfiguration = {
 
     botName: 'Sora Erlyana',
     botShortName: 'Sora',
-    botCodeName: 'SoraErlyana',
-
-    imgBBKey: '8ceb73c518129ab2ca63c8cf9f7ea8a6',
-    googleAiStudioKey: '--'
+    botCodeName: 'SoraErlyana'
 }
 
 export default environmentConfiguration

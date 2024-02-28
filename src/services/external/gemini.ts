@@ -59,7 +59,8 @@ const geminiText = async (text: string): Promise<GeminiResponse> => {
     };
 
     // Add API key to the URL
-    geminiUrl = geminiUrl + '?key=' + config.googleAiStudioKey;
+    // todo : Google API key
+    geminiUrl = geminiUrl + '?key=' + 'here';
 
     // Hit the API
     const response = await axios.post(geminiUrl, requestDataFormat);
