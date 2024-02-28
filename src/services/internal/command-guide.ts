@@ -13,7 +13,7 @@ const commandGuide: Executor = async (client, message) => {
         '🎲 *Random*',
         '.ppcouple - Gambar PP couple random\n',
         '🤖 *Fitur AI*',
-        '.gemini - *DALAM PENGEMBANGAN* - \n',
+        '.tanya [pertanyaan/perintah] - Tanya apapun ke Sora sebagai AI -\n',
         '🌐 *Translate*',
         '.indotoeng [text indo] - Translate Indonesia ke Inggris',
         '.engtoindo [text inggris] - Translate Inggris ke Indonesia\n',

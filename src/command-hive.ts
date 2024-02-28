@@ -5,7 +5,6 @@ import commandGuide from '@services/internal/command-guide'
 import imageToSticker from '@services/internal/image-to-sticker'
 import { translateEnglishToIndo, translateIndoToEnglish } from '@services/external/translate'
 import { imageToStickerText } from '@services/external/image-to-sticker-meme'
-import { geminiTextOnly } from '@services/external/gemini'
 import { log } from '@services/internal/log'
 import { indoSlangQuote } from '@services/internal/quote-indo-slang'
 import { getPpCouple } from '@services/internal/pp-couple'
@@ -31,7 +30,7 @@ const commands: Commands = {
     '.ppcouple': getPpCouple,
 
     // * AI-generated
-    '.gemini': geminiTextOnly,
+
 
     // * Translation
     '.engtoindo': translateEnglishToIndo,

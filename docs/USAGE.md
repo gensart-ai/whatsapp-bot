@@ -13,7 +13,7 @@ As of current version, I have built several built-in features in it too, some ar
 .ppcouple - Giving a couple of profile pictures
 
 🤖 AI Feature
-.gemini - *TEMPORARY DISABLED* - 
+Coming soon..
 
 🌐 Translate
 .indotoeng [text indo] - Translate Indonesia to English
