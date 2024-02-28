@@ -13,6 +13,9 @@
 # Technology Used <!-- {docsify-ignore} -->
 <a href='https://nodejs.org' target="_blank"><img alt='node.js' src='https://img.shields.io/badge/Node.js-100000?style=for-the-badge&logo=node.js&logoColor=white&labelColor=60AA50&color=447C42'/></a> <a href='https://www.typescriptlang.org/' target="_blank"><img alt='typescript' src='https://img.shields.io/badge/Typescript-100000?style=for-the-badge&logo=typescript&logoColor=white&labelColor=5094DD&color=5094DD'/></a>
 
+# Features
+Look at the documentation in the link down below ! Section `USAGE` !
+
 # Overview  
 This application uses `whatsapp-web.js` as a primary library. Keep in mind if you want to use this app, you did already know that :  
 ```

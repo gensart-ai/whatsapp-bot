@@ -5,6 +5,8 @@ You need :
 - Node.js v18++
 - NPM installed on your device
 - [ffmpeg](https://ffmpeg.org/) (Windows users may need this) - For multimedia support
+- ImgBB API Key, learn more at [https://api.imgbb.com/](https://api.imgbb.com/). Its usage is for Image-To-Sticker Text module
+- Ghola API, learn more at [https://www.ghola.ai/developer](https://www.ghola.ai/developer). You may need to signup/login using Google account first. Its usage is for AI Text Generation
 
 ## Long to short <!-- {docsify-ignore} -->
 This project requires **Node.js** to run, I use **Node v20.10** on Windows 10 and **Debian 11** too and it works fine. I haven't tested it yet on different version or environment than mine, but you may try it and report it to me, so I can update this details by you :).  
