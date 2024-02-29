@@ -3,6 +3,7 @@
 </p>
 
 > This project still on development 🚧, so it might have a massive changes, stay tuned !  
+![forthebadge](https://img.shields.io/github/last-commit/gensart-ai/whatsapp-bot/main?display_timestamp=author&style=for-the-badge&logo=github&link=https%3A%2F%2Fgithub.com%2Fgensart-ai%2Fwhatsapp-bot)
 
 #### WhatsApp bot powered by Node.js, with several daily commands that might be useful for you !
 
