@@ -1,5 +1,6 @@
-<img align="right" width="250" height="250" src="https://i.ibb.co/7y1v1q4/hour.png">
-
+<p align="center">
+    <img width="250" height="250" src="https://i.ibb.co/7y1v1q4/hour.png">
+</p>
 # SoraErlyana
 
 ![forthebadge](https://img.shields.io/github/last-commit/gensart-ai/whatsapp-bot/main?display_timestamp=author&style=for-the-badge&logo=github&link=https%3A%2F%2Fgithub.com%2Fgensart-ai%2Fwhatsapp-bot)
@@ -24,20 +25,20 @@ WhatsApp bot powered by Node.js, with several daily commands that might be usefu
 
 Look at the documentation in the link down below ! Section `USAGE` !
 
-# Overview  
+# Overview
 
-This application uses `whatsapp-web.js` as a primary library. Keep in mind if you want to use this app, you did already know that :  
+This application uses `whatsapp-web.js` as a primary library. Keep in mind if you want to use this app, you did already know that :
 
 ```bash
 WhatsApp terms & conditions do not allow any unofficial bots or automation on its services.
 And this app is considered unofficial.
 ```
 
-So, I am not responsible for any banning happen to your WhatsApp account by using this app. **I strongly suggests** you to use this app with your new or backup WhatsApp number. I use my second number for this and still safe until now.
+So, I am not responsible for any banning happen to your WhatsApp account by using this app. **I strongly suggest** you to use this app with your new or backup WhatsApp number. I use my second number for this and still safe until now.
 
 # Quickstart
 
-The installation needs several steps, you might want to see the documentation for more information.  
+The installation needs several steps, you might want to see the documentation for more information.
 
 For quick installation, first thing you can clone the app, no matter what method you use, below is the simple example one :
 
@@ -57,11 +58,11 @@ And, since the app was developed in Typescript, you can build it by using comman
 npm run build
 ```
 
-Or you can run directly the Typescript (for development), by using `npm run dev`. FYI, I use `tsx` for running .ts files.  
+Or you can run directly the Typescript (for development), by using `npm run dev`. FYI, I use `tsx` for running .ts files.
 
-If you have done the step above, you should see some QR code in the terminal, that's the same QR when you use WhatsApp Web for authenticating. Scan the QR using your WhatsApp app.  
+If you have done the step above, you should see some QR code in the terminal, that's the same QR when you use WhatsApp Web for authenticating. Scan the QR using your WhatsApp app.
 
-Wait for a message `System is online!`, and voila ! You are successfully integrates your WhatsApp to the app !  
+Wait for a message `System is online!`, and voila ! You are successfully integrates your WhatsApp to the app !
 
 Try to send `.help` to the WhatsApp you integrates in. It should return available commands as a response.
 
