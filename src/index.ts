@@ -27,9 +27,14 @@ client.on('loading_screen', async (percent, message) => {
     console.log(`State:  ${message}`);
 })
 
+client.on('call', call => {
+    call.reject();
+})
+
 client.on('ready', () => {
     console.log('System is online!');
 })
+
 client.on('disconnected', (message: string) => {
     console.log('Client is closed due to disconnecting', message);
 })
