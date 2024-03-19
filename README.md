@@ -1,6 +1,7 @@
 <p align="center">
     <img width="250" height="250" src="https://i.ibb.co/7y1v1q4/hour.png">
 </p>
+
 # SoraErlyana
 
 ![forthebadge](https://img.shields.io/github/last-commit/gensart-ai/whatsapp-bot/main?display_timestamp=author&style=for-the-badge&logo=github&link=https%3A%2F%2Fgithub.com%2Fgensart-ai%2Fwhatsapp-bot)
@@ -12,11 +13,13 @@ WhatsApp bot powered by Node.js, with several daily commands that might be usefu
 
 # Preview
 
-![preview of the bot](https://i.ibb.co/0f7r1jj/0229.gif)
+The preview might take a while to load sometimes, depends on your connection.
+
+![preview of the bot](https://i.ibb.co/BKDnYQD/whatsapp-bot-preview.gif)
 
 # Technology Used <!-- {docsify-ignore} -->
 
-> This project still on development 🚧, so it might have a massive changes, so stay tuned !
+> This project still on maintaining 🚧, so it might have a massive changes, so stay tuned !
 
 ![forthebadge](https://img.shields.io/badge/Node.js-100000?style=for-the-badge&logo=node.js&logoColor=white&labelColor=60AA50&color=447C42)
 ![forthebadge](https://img.shields.io/badge/Typescript-100000?style=for-the-badge&logo=typescript&logoColor=white&labelColor=5094DD&color=5094DD)
