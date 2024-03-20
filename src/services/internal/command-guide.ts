@@ -36,7 +36,14 @@ const commandGuide: Executor = async (client, message) => {
         '.neon-valentine',
         '.neon-cube',
         '.blackpink-logo\n',
-        `${config.botShortName} masih tahap pengembangan, banyak perintah juga nantinya ${config.botShortName} bisa lakuin loh >_<, stay tuned yaa. Oh iya, kamu juga bisa request ke creator ${config.botName}. Bye bye~\n\n`,
+        '👨‍🔬🧪 Fitur yang akan datang',
+        '[+] Tiktok Downloader',
+        '[+] Instagram Downloader',
+        '[+] YouTube Downloader',
+        '[+] Bot Information (versi, tech used, etc.)',
+        '[+] Feedback Request Fitur',
+        '[+] Donasi Semi-Kemanusiaan (Apaan nih ? Coming soon ya😄)\n',
+        `${config.botShortName} masih tahap pengembangan, banyak perintah juga nantinya ${config.botShortName} bisa lakuin loh >_<, stay tuned yaa. Oh iya, saat ini kamu juga bisa request fitur langsung ke creator ${config.botName}. Bye bye~\n\n`,
         `Detail of ${config.botShortName} : https://gensart.notion.site/SoraErlyana-WhatsApp-Bot-7248504bbe18476e912912a9426b9bad`
     ];
 
