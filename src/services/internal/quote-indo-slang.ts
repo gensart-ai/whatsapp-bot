@@ -5,7 +5,7 @@ import { Executor } from '@/command-hive'
 import * as wweb from '@utils/wweb'
 import * as logger from '@utils/logger'
 
-const QUOTES_DIRECTORY = 'src/assets';
+const QUOTES_DIRECTORY = 'assets';
 const QUOTES_FILE = 'quotes-indo-slang.json';
 
 const getIndoSlangQuote = () => {
