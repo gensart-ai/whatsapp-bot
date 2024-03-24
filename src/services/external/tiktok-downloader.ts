@@ -4,6 +4,7 @@ import { Executor } from '@/command-hive';
 import * as wweb from '@utils/wweb';
 import * as logger from '@utils/logger';
 import config from '@/env';
+import { setTimeout as sleep } from 'timers/promises';
 import { MessageMedia } from 'whatsapp-web.js';
 
 const CONVERTER_URL: string = 'https://c.ceeo.cc/api/v1/init?23=1llum1n471&_=41211514';
@@ -58,6 +59,7 @@ const downloadTikTokVideo = async (tiktokUrl: string) => {
     const finalEndpoint = convertUrl + '&' + tiktokUrlMetadata;
     const downloadUrl = await retrieveDownloadUrl(finalEndpoint);
 
+    sleep(3000);
     return downloadMedia(downloadUrl);
 }
 
