@@ -9,6 +9,7 @@ import { log } from '@services/internal/log'
 import { indoSlangQuote } from '@services/internal/quote-indo-slang'
 import { getPpCouple } from '@services/internal/pp-couple'
 import { ghola } from '@services/external/ghola'
+import { tiktokDownloader } from '@services/external/tiktok-downloader'
 
 type Commands = {
     [key: string]: (client: Client, message: Message) => any
@@ -26,6 +27,9 @@ const commands: Commands = {
     // * Quotes
     '.quotes': getForismaticQuotes,
     '.indoquotes': indoSlangQuote,
+
+    // * Converter
+    '.tiktok': tiktokDownloader,
 
     // * Random Image
     '.ppcouple': getPpCouple,

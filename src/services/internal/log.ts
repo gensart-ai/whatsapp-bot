@@ -19,6 +19,13 @@ const log: Executor = async (client, message) => {
     }
 
     try {
+
+        // * (for-current-dev) If not Genes who access this log, deny it
+        const contact = (await message.getContact()).pushname ?? 'unknown';
+        if (contact != 'Genesaret Johnes') {
+            return 0;
+        }
+
         const logs: string = logger.fetchLog(logFile);
 
         if (logs != '') {
