@@ -9,7 +9,8 @@ import { log } from '@services/internal/log'
 import { indoSlangQuote } from '@services/internal/quote-indo-slang'
 import { getPpCouple } from '@services/internal/pp-couple'
 import { ghola } from '@services/external/ghola'
-import { tiktokDownloader } from '@services/external/tiktok-downloader'
+import { requestInfo } from '@services/internal/request-info'
+import { instagramDownloader } from '@services/external/instagram-downloader'
 
 type Commands = {
     [key: string]: (client: Client, message: Message) => any
@@ -21,6 +22,9 @@ const commands: Commands = {
     // ! Administrative commands
     '.log': log,
 
+    // * Request Feature
+    '.request': requestInfo,
+
     // * Help
     '.help': commandGuide,
 
@@ -28,8 +32,9 @@ const commands: Commands = {
     '.quotes': getForismaticQuotes,
     '.indoquotes': indoSlangQuote,
 
+
     // * Converter
-    '.tiktok': tiktokDownloader,
+    '.ig': instagramDownloader,
 
     // * Random Image
     '.ppcouple': getPpCouple,

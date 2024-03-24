@@ -11,7 +11,7 @@ const routeCommand = async (client: Client, message: Message) => {
     const type: string = message.type;
     const command: string = message.body;
 
-    // 1.0, Currently only listen to text/chat or image messages, otherwise ignore it
+    // From 1.0, for now the bot only listen to text/chat or image messages, otherwise ignore it
     if (['chat', 'image', 'video'].includes(type) == false) {
         return 0;
     }
@@ -25,7 +25,7 @@ const routeCommand = async (client: Client, message: Message) => {
         wweb.sendMessage(
             client,
             message.from,
-            `${config.botShortName} tidak mengerti. Harap ketik \`.help\` untuk mengetahui yang ${config.botShortName} pahami, ${contact?.pushname ?? ''}!`
+            `${config.botShortName} gak ngerti maksudnya apa😢. Coba ketik \`.help\` biar tau yang ${config.botShortName} paham, makasi ${contact?.pushname ?? ''}☺!`
         )
     }
 }

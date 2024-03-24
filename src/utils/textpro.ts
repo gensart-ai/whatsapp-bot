@@ -41,6 +41,8 @@ type TextProImageObject = {
     mimetype: string
 }
 
+const SPOOFED_USER_AGENT = 'Mozilla (Firefox Inc.)';
+
 /**
  * Retrieves an image from a given URL using the provided Axios instance.
  *
@@ -51,7 +53,10 @@ type TextProImageObject = {
 const getImageFromTextPro = async (imageUrl: string, axiosInstance: AxiosInstance): Promise<TextProImageObject> => {
     const textProUrl = 'https://textpro.me';
     const imageResponse = await axiosInstance.get(textProUrl + imageUrl, {
-        'responseType': 'arraybuffer'
+        responseType: 'arraybuffer',
+        headers: {
+            'User-Agent': SPOOFED_USER_AGENT
+        }
     });
 
     const imageBase64: string = Buffer.from(imageResponse.data, 'binary').toString('base64');
@@ -79,7 +84,8 @@ const getImageUrlFromTextPro = async (metadata: object, axiosInstance: AxiosInst
 
     const response = await axiosInstance.post(textProImageHiveUrl, metadata, {
         headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'User-Agent': SPOOFED_USER_AGENT
         }
     });
 
@@ -106,6 +112,7 @@ const getImageMetadataFromTextPro = async (metadata: TextProMetadata): Promise<J
     }, {
         headers: {
             'Content-Type': 'multipart/form-data',
+            'User-Agent': SPOOFED_USER_AGENT
         }
     });
 
@@ -124,7 +131,11 @@ const getImageMetadataFromTextPro = async (metadata: TextProMetadata): Promise<J
  * @return {Promise<TextProToken>} the token retrieved from the TextPro page
  */
 const getTokenFromTextProPage = async (textProUrl: string, axiosInstance: AxiosInstance): Promise<TextProToken> => {
-    const response = await axiosInstance.get(textProUrl);
+    const response = await axiosInstance.get(textProUrl, {
+        headers: {
+            'User-Agent': SPOOFED_USER_AGENT
+        }
+    });
 
     if (response.status == 200) {
         const $ = cheerio.load(response.data);

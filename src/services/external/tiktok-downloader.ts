@@ -64,6 +64,11 @@ const downloadTikTokVideo = async (tiktokUrl: string) => {
 }
 
 const tiktokDownloader: Executor = async (client, message) => {
+
+    // ! Hold the feature, it did not work well
+    wweb.replyMessage(message, 'Fitur ini sedang dilakukan perbaikan, harap stay tuned untuk informasi selanjutnya :).');
+    return 0;
+
     const tiktokUrl = message.body.split(' ')[1];
 
     if ((tiktokUrl == undefined) || (tiktokUrl == '')) {
@@ -71,6 +76,7 @@ const tiktokDownloader: Executor = async (client, message) => {
             message,
             `${config.botShortName} tidak melihat adanya URL video TikTok kamu :(.\n\nGunakan format: \`.tiktok [URL video TikTok] ya!\``
         );
+        return 0;
     }
 
     try {

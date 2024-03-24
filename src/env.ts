@@ -18,6 +18,11 @@ interface EnvironmentConfiguration {
      * Bot codename
      */
     botCodeName: string,
+
+    /**
+     * Owner name of the bot
+     */
+    ownerName: string
 }
 
 const environmentConfiguration: EnvironmentConfiguration = {
@@ -25,7 +30,8 @@ const environmentConfiguration: EnvironmentConfiguration = {
 
     botName: 'Sora Erlyana',
     botShortName: 'Sora',
-    botCodeName: 'SoraErlyana'
+    botCodeName: 'SoraErlyana',
+    ownerName: 'Genesaret Johnes'
 }
 
 export default environmentConfiguration
