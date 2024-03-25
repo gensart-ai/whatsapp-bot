@@ -11,6 +11,7 @@ import { getPpCouple } from '@services/internal/pp-couple'
 import { ghola } from '@services/external/ghola'
 import { requestInfo } from '@services/internal/request-info'
 import { instagramDownloader } from '@services/external/instagram-downloader'
+import { botInfo } from '@services/internal/bot-info'
 
 type Commands = {
     [key: string]: (client: Client, message: Message) => any
@@ -25,8 +26,9 @@ const commands: Commands = {
     // * Request Feature
     '.request': requestInfo,
 
-    // * Help
+    // * Help Information
     '.help': commandGuide,
+    '.botinfo': botInfo,
 
     // * Quotes
     '.quotes': getForismaticQuotes,

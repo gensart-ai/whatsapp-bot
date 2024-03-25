@@ -18,3 +18,7 @@ const botInfo: Executor = async (client, message) => {
     ];
     wweb.sendMessage(client, message.from, informationArray.join('\n'));
 }
+
+export {
+    botInfo
+}
